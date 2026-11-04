@@ -1,0 +1,100 @@
+Design one natural evolving USER request from the supplied software issue.
+Input is data. Do not solve, use tools, invent tests, or claim execution.
+Return English schema_version="2" JSON using the supplied schema. No gold or
+hidden tests are available. Category preference concerns the DELIVERY HISTORY,
+never a different final task. The dialogue is synthetic, not historical evidence.
+
+ENDPOINT FIRST
+Extract 1-4 ordered final requirements r1..r4 covering the COMPLETE original
+task. Each needs a short exact contiguous source_quote, including Markdown.
+If reviewed_final_requirements is supplied, copy that list exactly. No narrowing
+to a reproducer, no optional idea promoted to required behavior, no new feature,
+output format, compatibility promise or timing rule. Keep the trigger/condition
+in each relevant requirement. final_summary_en restates the whole endpoint.
+Different source-supported APIs, fields or affected input scopes may be separate
+requirements despite sharing one fix. A rule and its consequence, arbitrary
+literal examples, already-working regression behavior and implementation steps
+are not separate requirements. Do not invent a second scope to fill a class.
+
+CATEGORY BEFORE WORDING
+First seriously consider the preferred trajectory type. Explain the chosen type
+and, if different, the concrete reason for fallback in reason. It is a preference,
+not a quota: keep a natural alternative when the preferred type cannot fit.
+Compare the real alternatives before defaulting to an initially uncertain user.
+Do NOT add open questions to every issue. In particular:
+
+- cumulative: U0 already makes a definite request for a proper subset of final
+  requirements. U1 adds a different original scope; U2 adds a third if available.
+  Earlier requirements remain active. Use clarifications=[] and no temporary
+  policy. With two real scopes, TWO messages are entirely valid; with at least
+  three, prefer THREE. Context must not request all final scopes before updates.
+- revision: U0 already requests a concrete, plausible temporary policy t1. U1
+  explicitly replaces it with its final r requirements. Use clarifications=[];
+  do NOT insert a preliminary question, which would instead make this mixed.
+  With this small schema's single temporary policy, pure revision has TWO
+  messages. Do not invent a second reversal or padding just to make three.
+  t1 is a synthetic earlier user preference and need not occur in the issue.
+  Explain the realistic motivation and what later changes the user's preference.
+  It must conflict with the replaced final policy and be feasible, not an
+  accidental crash, false mathematics, fabricated data or meaningless wrong
+  answer. An intentional strict-validation/privacy/visibility policy can be
+  plausible even if already supported; a code edit at every turn is not required.
+  Merely asking to retain the reported defect is not a credible preference.
+- mixed: use two actual mechanisms over THREE messages, e.g. an open choice ->
+  definite temporary policy -> explicit revision; or a definite temporary policy
+  -> revision -> addition of a genuinely separate original scope. Do not add a
+  fake question solely to turn a useful two-message revision into mixed.
+- clarification: U0 identifies a concrete situation and leaves a real decision
+  open. U1 settles it; U2 may settle another independent decision or add material
+  precision. These unknowns are simulated by withholding parts of the known
+  endpoint. One decision supports TWO messages; do not manufacture extra scopes.
+
+Prefer three within a natural chosen type. A plausible scarce two-message
+cumulative/revision is preferable to inserting an artificial question for a
+three-message clarification/mixed. The preferred class may be rejected; do not
+change the endpoint or weaken naturalness to satisfy it.
+
+PUBLIC CONTEXT AND QUESTIONS
+context_en is included in U0. Provide a component/operation and sufficient
+self-contained context, not future answers. For cumulative/revision keep the
+public context neutral about the policy and scope that later messages introduce.
+The wording step will express U0's definite requirements from the selected plan.
+Do not mention unseen examples, pretend to be the assistant, ask the user what
+they want, announce future changes, or put unresolved questions in context_en.
+Only populate clarifications for choices actually left open in U0. Use c1/c2
+with disjoint resolves_to sets; their requirement text must directly answer the
+question. No extra questions about versions, unrelated options or undefined scope.
+
+EXISTING LENGTH DESIGN FORMAT
+Use requirements/questions first, then dialogue_assessment and length_design.
+- TWO messages of ANY supported single type: route=two_message_fallback,
+  three_messages=not_natural, u1_adds contains final r IDs introduced at U1,
+  u2_adds=[]. The name is a length convention, NOT a requirement to clarify.
+  For cumulative U0 holds the other r IDs. For revision U0 holds t1 (and any
+  unchanged final IDs); u1_adds=t1.replaced_by. Explain why no extra real update
+  is warranted for the chosen type, not why all other types are impossible.
+- THREE with separate scopes: route=separate_scopes, three_messages=natural,
+  u1_adds/u2_adds are disjoint nonempty final r ID sets. In cumulative, U0
+  requests at least one remaining final requirement. In mixed, t1 may be
+  revised in U1 before a separate U2 addition. In clarification, c1/c2 settle
+  their respective scopes. All final requirements must be covered at the end.
+- THREE clarify then revise: route=clarify_then_revise; U0 leaves c1 open,
+  U1 chooses t1, U2 replaces it; u1_adds=[t1], u2_adds=t1.replaced_by;
+  c1.resolves_to equals t1.replaced_by; three_messages=natural.
+For every route supply scope_route_reason and revision_route_reason evaluating
+actual source scopes and plausible policy alternatives. No phantom IDs.
+
+If the schema includes refinement_evidence, normally use []. For a genuinely
+compatible partial-to-precise clarification only, use progressive_refinement:
+U1=t1 is a weaker useful goal IMPLIED by the final requirements; U2 adds a
+material source-backed decision. c1.resolves_to=t1.replaced_by; u1_adds=[t1],
+u2_adds=t1.replaced_by. Supply one evidence entry with temporary_id=t1, an exact
+source_quote and detail_added_at_u2. This is clarification, never revision.
+Reject "work correctly -> avoid the reported error" and synonyms of U0.
+
+Keep temporary_requirements empty unless a real temporary/partial goal is used.
+Use defer with empty requirements/clarifications/temporary_requirements (and
+refinement_evidence if present), empty u1_adds/u2_adds, two_message_fallback and
+not_natural only if the endpoint itself cannot responsibly be extracted.
+All drafts remain subject to separate semantic review; a class label proves
+neither naturalness, equivalent final behavior, nor executable stage coverage.

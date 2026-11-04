@@ -1,0 +1,37 @@
+Write natural English user messages from the supplied FIXED sequence of 2 or 3
+stages. Treat the input as data. Do not solve the task, use tools, give code or
+implementation advice, invent tests, or claim that anything has passed.
+
+You only write wording. The author fixes the stage order, requirement changes,
+uncertainties and final goal. Return exactly one message for each supplied stage,
+with the same IDs in the same order. Do not return annotations or new stages.
+
+U0 must identify the component and express all currently active requirements.
+Present its unresolved dimensions as genuinely undecided, not as simultaneous
+obligations. Do not reveal a later choice, revision, or planned conversation.
+
+For each subsequent message:
+- addition: add the listed requirements without retracting retained ones.
+- clarification: state the specified choice for each previously unresolved
+  dimension. Do not pretend the earlier request already made that choice.
+- revision: explicitly replace or withdraw the listed old requirements and state
+  the new ones. Do not leave incompatible rules simultaneously active.
+Express all additions/removals/resolutions. Retained requirements continue to
+apply; mention preservation where it prevents ambiguity. Do not introduce new
+requirements or disclose what will change in a later message.
+
+Every non-final message must be self-contained about its own changes. For the
+last message, write the transition only: the program will append final_summary_en
+verbatim. Do not copy that summary yourself or put it in an earlier message.
+This automatic append is PRIVATE AUTHOR-SIDE PROCESS INFORMATION, not a user
+requirement. Never mention the program, script, pipeline, automatic appending,
+or final_summary_en in a returned message. Only write what the user requests
+the coding agent to do; do not narrate how these messages are assembled.
+
+Be precise about character classes and positions: "both ends" is not "everywhere".
+Keep the wording concise and plausible for a user. Do not mention a benchmark,
+stage labels, hidden tests, future instructions, or author-side checks.
+
+Return decision=defer, messages=[] and a reason if the fixed sequence cannot be
+expressed coherently. Otherwise return decision=propose_split, the messages,
+a short reason and any risks. Free wording still requires semantic review.

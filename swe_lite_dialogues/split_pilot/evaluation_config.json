@@ -1,0 +1,39 @@
+{
+  "harness_package": "swebench==4.1.0",
+  "compatibility_status": "Pinned compatibility baseline: swebench==4.1.0. Historical author base/gold checks cover three tasks; full dataset runtime validation is pending.",
+  "dataset_format": "Original SWE-bench rows with repo, version, base_commit, test_patch, FAIL_TO_PASS and PASS_TO_PASS.",
+  "loader_source": "https://github.com/SWE-bench/SWE-bench/blob/v4.1.0/swebench/harness/utils.py",
+  "test_spec_source": "https://github.com/SWE-bench/SWE-bench/blob/v4.1.0/swebench/harness/test_spec/test_spec.py",
+  "prediction_fields": [
+    "instance_id",
+    "model_name_or_path",
+    "model_patch"
+  ],
+  "score": "Original FAIL_TO_PASS and PASS_TO_PASS tests; do not compare patch text with gold.",
+  "limitations": [
+    "The previously proposed newer harness revision requires image/eval_script metadata absent from this snapshot; it is not a drop-in replacement.",
+    "v4.1.0 is a compatibility baseline. Newer releases include grading fixes; before formal results, audit raw test logs and exit codes and decide how to adopt those fixes.",
+    "Historical author base/gold runs cover django__django-12983, django__django-14017 and sympy__sympy-20322. Intermediate-stage validation is limited to slugify. No generic solver experiment is included."
+  ],
+  "release_checks": [
+    "Independent final-spec review",
+    "Original base/gold full-environment runs",
+    "Regression/log/exit-code audit",
+    "Matched agent smoke runs with message isolation"
+  ],
+  "changelog_source": "https://github.com/SWE-bench/SWE-bench/blob/main/CHANGELOG.md",
+  "validated_tasks": {
+    "django__django-12983": {
+      "evidence": "Separate author archive; see docs/validation.md",
+      "agent_experiment_run": false
+    },
+    "django__django-14017": {
+      "evidence": "Separate author archive; see docs/validation.md",
+      "agent_experiment_run": false
+    },
+    "sympy__sympy-20322": {
+      "evidence": "Separate author archive; see docs/validation.md",
+      "agent_experiment_run": false
+    }
+  }
+}

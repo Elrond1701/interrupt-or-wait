@@ -1,0 +1,40 @@
+{
+  "name": "Split SWE-bench Lite final-score preview",
+  "version": "0.8",
+  "date": "2026-11-03",
+  "status": "usable_for_pilot_final_evaluation_pending_full_environment_validation",
+  "manifest_sha256": "5d39ffad344b0d975061f0b52ac9f0f15f87659eca60625fa4cbd43e3b97663c",
+  "original_tasks": 152,
+  "message_counts": {
+    "2": 59,
+    "3": 93
+  },
+  "categories": {
+    "cumulative": 12,
+    "clarification": 36,
+    "revision": 18,
+    "mixed": 86
+  },
+  "source_attempted": 300,
+  "source_remaining": 0,
+  "known_major_quality_holds_excluded": 2,
+  "scoring": "Original final FAIL_TO_PASS and PASS_TO_PASS; no intermediate score",
+  "evaluation_entrypoint": "../../evaluate_benchmark.py",
+  "usage": "../../../README.md",
+  "environment_validated_tasks": [
+    "django__django-12983",
+    "django__django-14017",
+    "sympy__sympy-20322"
+  ],
+  "unvalidated_environment_tasks": 149,
+  "new_solver_experiments": 0,
+  "warning": "Author/controller bundle contains future messages; evaluation_sources contains gold and hidden tests. Keep the bundle outside solver workspaces.",
+  "validation_policy": "Construction needs no Docker. Initial release may sample environments; final scoring uses Docker. Real agent experiments are required for model scores, not for generating the dataset.",
+  "semantic_spotcheck_scope": "Historical basic_v29 review of six purposively selected tasks; no new blocking split issue found then. Not a guarantee for the current dataset.",
+  "environment_evidence_note": "Post-export author base/gold validation. Frozen manifest/candidate environment flags retain their construction-time status; no new agent experiment or intermediate score.",
+  "first_pass_complete": true,
+  "source_total": 300,
+  "source_not_selected": 148,
+  "statistics": "statistics.json",
+  "evidence_archive_note": "Historical generation and runtime evidence is retained separately by the authors and is not included in this compact handoff. See docs/validation.md."
+}

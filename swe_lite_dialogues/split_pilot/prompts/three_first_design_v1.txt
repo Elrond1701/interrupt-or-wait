@@ -1,0 +1,49 @@
+THREE-FIRST DESIGN POLICY (applies before the extraction/adaptation instructions).
+Your default deliverable is one U0/U1/U2 conversation ending at the exact original
+task. Design the two substantive updates FIRST, then fill the contract fields.
+Do not start with one generic question and stop without considering both routes.
+This is synthetic conversation construction, not reconstruction of issue history.
+
+Return length_design as a small, checkable design record:
+- route: separate_scopes, clarify_then_revise, or two_message_fallback.
+- u1_adds / u2_adds: IDs of the requirements introduced by each update, including
+  answers to open questions. Use final r IDs, or t1 for an earlier preference.
+  These are proposed updates, not executable implementation steps.
+- scope_route_reason: identify independently requestable source scopes, or give
+  the concrete reason that splitting the original scope would duplicate, omit,
+  or invent behavior. One fix / one bug / could be bundled is not a reason.
+- revision_route_reason: identify a plausible earlier user policy and why it
+  would change, or explain why no reasonable alternative exists in this case.
+
+Route A: use distinct source scopes and two genuine updates. For two final
+requirements, normally leave both questions open in U0 and answer one per turn.
+For three scopes, U0 may request one and U1/U2 add the others. Do not repackage
+a rule and its direct consequence as independent requests. If final atoms are
+LOCKED by the following instructions, do not split those atoms in this mode.
+
+Route B: U0 leaves a relevant choice open; U1 chooses a usable temporary policy
+t1; U2 explicitly replaces it with the original final requirement(s). The early
+preference is deliberately SYNTHETIC: it need NOT appear in the source issue.
+Its absence from the issue, or the issue author's already knowing the answer,
+is NOT grounds to reject this route. A fail-fast validation policy versus
+skipping incomplete observations, or selective versus comprehensive visibility,
+can be real product choices. Evaluate suitability for this actual task; do not
+copy an example indiscriminately. Explain the user motivation for the temporary
+choice and its later change. Give c1 the same target IDs as t1.replaced_by;
+u1_adds=[t1], u2_adds=t1.replaced_by. Fully retire t1 at the end.
+
+No manufactured bug: accidental crashes, false mathematics, mangled identifiers,
+or simply retaining the reported defect are not reasonable temporary policies.
+Do not invent new public options or unrelated features. A temporary policy must
+specify observable behavior; inspect / implement / test, restatements, and a
+last-turn recap are not substantive updates. Questions must be neutral, and U0
+must not disclose the future answers. Keep all original final requirements.
+
+Fallback: only after both routes lack a meaningful second update, set
+route=two_message_fallback, u1_adds to the final IDs settled in U1, u2_adds=[],
+and three_messages=not_natural. Give task-specific reasons for BOTH routes;
+"no preference in source" is insufficient. Two messages are valid output,
+not failure. If deferring the task itself, use this route and empty update IDs.
+For a three-message design, set three_messages=natural and actually provide
+the distinct scopes/questions or t1 that make both updates possible. Structural
+checks do not establish naturalness: semantic review can still reject a design.

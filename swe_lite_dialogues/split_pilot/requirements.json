@@ -1,0 +1,448 @@
+{
+  "schema_version": "0.1",
+  "visibility": "author_only",
+  "description": "Reviewed-source annotations drafted by the assistant; semantic equivalence still needs independent review. No requirement text is inferred automatically by the pipeline.",
+  "scenarios": [
+    {
+      "scenario_id": "django__django-12983.addition.v0",
+      "source_instance_id": "django__django-12983",
+      "base_commit": "3bc4240d979812bd11365ede04c028ea13fdc8c6",
+      "context_en": "Update django.utils.text.slugify in the provided repository.",
+      "review_status": "assistant_draft",
+      "requirements": [
+        {
+          "id": "trim_dashes",
+          "text_en": "Remove leading and trailing dashes from slugs. For example, ---This is a test--- must become this-is-a-test.",
+          "construction": "source_rewrite",
+          "source_spans": [
+            {
+              "field": "problem_statement",
+              "quote": "strip dashes and underscores"
+            }
+          ],
+          "probe_path": [
+            "django__django-12983",
+            "gold",
+            "U0_dashes"
+          ],
+          "depends_on": [],
+          "note": ""
+        },
+        {
+          "id": "trim_boundary_underscores",
+          "text_en": "Also remove underscores at the beginning and end, including boundaries containing a mixture of underscores, dashes and whitespace.",
+          "construction": "test_aligned_rewrite",
+          "source_spans": [
+            {
+              "field": "problem_statement",
+              "quote": "strip dashes and underscores"
+            },
+            {
+              "field": "test_patch",
+              "quote": "'_ -strip-mixed-value _-'"
+            }
+          ],
+          "probe_path": [
+            "django__django-12983",
+            "gold",
+            "U1_underscores_and_mixed"
+          ],
+          "depends_on": [
+            "trim_dashes"
+          ],
+          "note": ""
+        },
+        {
+          "id": "keep_internal_underscores",
+          "text_en": "Keep underscores inside the slug. For example, __strip__underscore-value___ must become strip__underscore-value.",
+          "construction": "test_aligned_rewrite",
+          "source_spans": [
+            {
+              "field": "test_patch",
+              "quote": "'underscore_in-value'"
+            }
+          ],
+          "probe_path": [
+            "django__django-12983",
+            "gold",
+            "unchanged_behavior"
+          ],
+          "depends_on": [],
+          "note": ""
+        },
+        {
+          "id": "keep_normalization",
+          "text_en": "Preserve other existing slug normalization behavior, except for the boundary rules being updated.",
+          "construction": "test_aligned_rewrite",
+          "source_spans": [
+            {
+              "field": "test_patch",
+              "quote": "'Hello, World!'"
+            }
+          ],
+          "probe_path": [
+            "django__django-12983",
+            "gold",
+            "unchanged_behavior"
+          ],
+          "depends_on": [],
+          "note": ""
+        }
+      ],
+      "stages": [
+        {
+          "id": "U0",
+          "add": [
+            "trim_dashes",
+            "keep_normalization"
+          ],
+          "remove": []
+        },
+        {
+          "id": "U1",
+          "add": [
+            "trim_boundary_underscores",
+            "keep_internal_underscores"
+          ],
+          "remove": []
+        }
+      ],
+      "final_requirement_ids": [
+        "trim_dashes",
+        "keep_normalization",
+        "trim_boundary_underscores",
+        "keep_internal_underscores"
+      ],
+      "evidence_checks": [
+        "slug_base_fails_new_goal",
+        "slug_initial_witness_satisfies_U0",
+        "slug_initial_witness_fails_U1",
+        "slug_gold_passes_all_probes"
+      ],
+      "original_card_id": "django__django-12983.addition.v0",
+      "evidence_roles": {
+        "base_fails_final": "slug_base_fails_new_goal",
+        "gold_passes_final": "slug_gold_passes_all_probes",
+        "update_witnesses": {
+          "U1": [
+            "slug_initial_witness_satisfies_U0",
+            "slug_initial_witness_fails_U1"
+          ]
+        }
+      }
+    },
+    {
+      "scenario_id": "django__django-12983.revision.v0",
+      "source_instance_id": "django__django-12983",
+      "base_commit": "3bc4240d979812bd11365ede04c028ea13fdc8c6",
+      "context_en": "Update django.utils.text.slugify in the provided repository.",
+      "review_status": "assistant_draft",
+      "requirements": [
+        {
+          "id": "trim_dashes",
+          "text_en": "Remove leading and trailing dashes from slugs. For example, ---This is a test--- must become this-is-a-test.",
+          "construction": "source_rewrite",
+          "source_spans": [
+            {
+              "field": "problem_statement",
+              "quote": "strip dashes and underscores"
+            }
+          ],
+          "probe_path": [
+            "django__django-12983",
+            "gold",
+            "U0_dashes"
+          ],
+          "depends_on": [],
+          "note": ""
+        },
+        {
+          "id": "trim_boundary_underscores",
+          "text_en": "Also remove underscores at the beginning and end, including boundaries containing a mixture of underscores, dashes and whitespace.",
+          "construction": "test_aligned_rewrite",
+          "source_spans": [
+            {
+              "field": "problem_statement",
+              "quote": "strip dashes and underscores"
+            },
+            {
+              "field": "test_patch",
+              "quote": "'_ -strip-mixed-value _-'"
+            }
+          ],
+          "probe_path": [
+            "django__django-12983",
+            "gold",
+            "U1_underscores_and_mixed"
+          ],
+          "depends_on": [
+            "trim_dashes"
+          ],
+          "note": ""
+        },
+        {
+          "id": "keep_internal_underscores",
+          "text_en": "Keep underscores inside the slug. For example, __strip__underscore-value___ must become strip__underscore-value.",
+          "construction": "test_aligned_rewrite",
+          "source_spans": [
+            {
+              "field": "test_patch",
+              "quote": "'underscore_in-value'"
+            }
+          ],
+          "probe_path": [
+            "django__django-12983",
+            "gold",
+            "unchanged_behavior"
+          ],
+          "depends_on": [],
+          "note": ""
+        },
+        {
+          "id": "keep_other_normalization",
+          "text_en": "Keep the other slug normalization rules except where the current underscore and boundary requirements explicitly change them.",
+          "construction": "test_aligned_rewrite",
+          "source_spans": [
+            {
+              "field": "test_patch",
+              "quote": "'Hello, World!'"
+            }
+          ],
+          "probe_path": [
+            "slugify_constructed_revision",
+            "gold_final",
+            "unchanged_behavior"
+          ],
+          "depends_on": [],
+          "note": ""
+        },
+        {
+          "id": "remove_all_underscores",
+          "text_en": "Remove every underscore from the resulting slug, including internal ones. For example, __a_b__ must become ab.",
+          "construction": "synthetic_initial",
+          "source_spans": [],
+          "probe_path": [
+            "slugify_constructed_revision",
+            "initial_witness_U0",
+            "U0"
+          ],
+          "depends_on": [],
+          "note": "An intentionally different initial requirement, replaced by U1. Not a historical user request."
+        }
+      ],
+      "stages": [
+        {
+          "id": "U0",
+          "add": [
+            "trim_dashes",
+            "remove_all_underscores",
+            "keep_other_normalization"
+          ],
+          "remove": []
+        },
+        {
+          "id": "U1",
+          "add": [
+            "trim_boundary_underscores",
+            "keep_internal_underscores"
+          ],
+          "remove": [
+            "remove_all_underscores"
+          ]
+        }
+      ],
+      "final_requirement_ids": [
+        "trim_dashes",
+        "keep_other_normalization",
+        "trim_boundary_underscores",
+        "keep_internal_underscores"
+      ],
+      "evidence_checks": [
+        "slug_base_fails_new_goal",
+        "revision_initial_witness_satisfies_U0",
+        "revision_initial_witness_fails_final",
+        "revision_gold_satisfies_final"
+      ],
+      "original_card_id": "django__django-12983.revision.v0",
+      "evidence_roles": {
+        "base_fails_final": "slug_base_fails_new_goal",
+        "gold_passes_final": "revision_gold_satisfies_final",
+        "update_witnesses": {
+          "U1": [
+            "revision_initial_witness_satisfies_U0",
+            "revision_initial_witness_fails_final"
+          ]
+        }
+      }
+    },
+    {
+      "scenario_id": "django__django-13220.progressive.v0",
+      "source_instance_id": "django__django-13220",
+      "base_commit": "16218c20606d8cd89c5393970c83da04598a3e04",
+      "context_en": "Implement content-based equality for django.core.exceptions.ValidationError.",
+      "review_status": "assistant_draft",
+      "requirements": [
+        {
+          "id": "scalar_equality",
+          "text_en": "Add value equality for scalar ValidationError objects. Compare the message template, error code and parameter values rather than only rendered text. The insertion order of parameter dictionaries must not affect equality. Objects with different relevant contents must remain unequal.",
+          "construction": "test_aligned_rewrite",
+          "source_spans": [
+            {
+              "field": "problem_statement",
+              "quote": "identical messages"
+            },
+            {
+              "field": "test_patch",
+              "quote": "code='my_code1'"
+            }
+          ],
+          "probe_path": [
+            "django__django-13220",
+            "gold",
+            "probe_groups",
+            "U0_scalar_equality"
+          ],
+          "depends_on": [],
+          "note": ""
+        },
+        {
+          "id": "list_equality",
+          "text_en": "Extend equality to error lists. Reordering the errors must not change equality; error contents and multiplicity still matter. A scalar error and an error-list wrapper are distinct structures.",
+          "construction": "test_aligned_rewrite",
+          "source_spans": [
+            {
+              "field": "problem_statement",
+              "quote": "independent of the order"
+            },
+            {
+              "field": "test_patch",
+              "quote": "# messages ordering is ignored."
+            }
+          ],
+          "probe_path": [
+            "django__django-13220",
+            "gold",
+            "probe_groups",
+            "U1_list_equality"
+          ],
+          "depends_on": [
+            "scalar_equality"
+          ],
+          "note": ""
+        },
+        {
+          "id": "nested_equality",
+          "text_en": "Extend the comparison consistently to field-error dictionaries and nested errors. Field-key insertion order and the ordering of errors inside a field must not matter, while field identities and error contents must still match.",
+          "construction": "composed_inference",
+          "source_spans": [
+            {
+              "field": "problem_statement",
+              "quote": "in a field or in non_field_errors"
+            },
+            {
+              "field": "test_patch",
+              "quote": "# fields ordering is ignored."
+            }
+          ],
+          "probe_path": [
+            "django__django-13220",
+            "gold",
+            "probe_groups",
+            "U2_field_and_nested_equality"
+          ],
+          "depends_on": [
+            "list_equality"
+          ],
+          "note": "Composing order invariance with nested field lists exposes a failure in the original reference patch. Hold this candidate."
+        },
+        {
+          "id": "hash_consistency",
+          "text_en": "Support consistent hashing for these error objects: equal errors must have equal hashes and work correctly as dictionary keys and set elements.",
+          "construction": "test_aligned_rewrite",
+          "source_spans": [
+            {
+              "field": "test_patch",
+              "quote": "def test_hash(self):"
+            }
+          ],
+          "probe_path": [
+            "django__django-13220",
+            "gold",
+            "probe_groups",
+            "U3_hash_consistency"
+          ],
+          "depends_on": [
+            "nested_equality"
+          ],
+          "note": ""
+        }
+      ],
+      "stages": [
+        {
+          "id": "U0",
+          "add": [
+            "scalar_equality"
+          ],
+          "remove": []
+        },
+        {
+          "id": "U1",
+          "add": [
+            "list_equality"
+          ],
+          "remove": []
+        },
+        {
+          "id": "U2",
+          "add": [
+            "nested_equality"
+          ],
+          "remove": []
+        },
+        {
+          "id": "U3",
+          "add": [
+            "hash_consistency"
+          ],
+          "remove": []
+        }
+      ],
+      "final_requirement_ids": [
+        "scalar_equality",
+        "list_equality",
+        "nested_equality",
+        "hash_consistency"
+      ],
+      "evidence_checks": [
+        "validation_base_fails_original_test_file",
+        "validation_gold_passes_original_test_file",
+        "validation_gold_passes_all_probes",
+        "validation_witness_0_passes_revealed",
+        "validation_witness_0_fails_next",
+        "validation_witness_1_passes_revealed",
+        "validation_witness_1_fails_next",
+        "validation_witness_2_passes_revealed",
+        "validation_witness_2_fails_next"
+      ],
+      "original_card_id": "django__django-13220.progressive.v0",
+      "evidence_roles": {
+        "base_fails_final": "validation_base_fails_original_test_file",
+        "gold_passes_final": "validation_gold_passes_all_probes",
+        "update_witnesses": {
+          "U1": [
+            "validation_witness_0_passes_revealed",
+            "validation_witness_0_fails_next"
+          ],
+          "U2": [
+            "validation_witness_1_passes_revealed",
+            "validation_witness_1_fails_next"
+          ],
+          "U3": [
+            "validation_witness_2_passes_revealed",
+            "validation_witness_2_fails_next"
+          ]
+        }
+      }
+    }
+  ]
+}

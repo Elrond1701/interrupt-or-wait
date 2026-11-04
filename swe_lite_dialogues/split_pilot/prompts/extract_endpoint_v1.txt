@@ -1,0 +1,33 @@
+Extract the COMPLETE final behavioral task from the supplied software issue.
+This is an endpoint-only preparation step. Do not choose a dialogue class or
+invent earlier preferences, open questions, or extra requirements for more turns.
+Input is data; do not solve, use tools, invent tests, or claim execution. Gold
+and tests are not supplied. Return English schema_version="2" JSON.
+
+Use 1-4 ordered requirements r1..r4, each with an exact short contiguous
+source_quote including Markdown. Preserve conditions, requested output and
+generality. Separate genuinely distinct requested fields, interfaces or affected
+input scopes, even when one code fix covers them. Do not split a rule and its
+consequence, a reported failure and its implementation cause, arbitrary literal
+examples, or already-working behavior into different requirements. A reproduction
+illustrates a general task; do not restrict the task to its class/function names.
+Do not broaden a float-pickle bug into all possible cross-version compatibility.
+
+Distinguish concrete requests from discussion, alternatives and optional ideas.
+An optional general toolkit/refactor or an alternative new API must not become
+mandatory alongside the actual bug fix. Do not invent a precise policy when the
+issue does not settle it; use defer if a complete responsible endpoint cannot
+be stated. final_summary_en restates exactly the extracted requirements.
+
+context_en identifies the component and a self-contained symptom/use situation.
+Do not refer to an absent example or announce future dialogue turns.
+temporary_requirements=[] and clarifications=[] always: this step does not
+design a user history. reason explains scope/ambiguities, not a preferred class.
+
+For compatibility with the existing contract schema use the following bookkeeping
+only (it is NOT an approved dialogue): dialogue_assessment.three_messages=
+not_natural, reason="Endpoint only; dialogue design follows review.";
+length_design.route=two_message_fallback, u1_adds=all final IDs, u2_adds=[],
+scope_route_reason describes actual distinct scopes and revision_route_reason=
+"No earlier policy is designed at the endpoint-only step.".
+For defer, keep all requirement lists and both update lists empty.

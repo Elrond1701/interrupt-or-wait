@@ -1,0 +1,19 @@
+{
+  "provider": "openai_responses",
+  "model": "gpt-6-luna",
+  "reasoning_effort": "low",
+  "service_tier": "default",
+  "max_output_tokens": 4096,
+  "max_calls": 3,
+  "max_request_bytes": 40000,
+  "budget_usd": 0.10,
+  "timeout_seconds": 60,
+  "pricing_checked_on": "2026-10-23",
+  "pricing_source": "https://developers.openai.com/api/docs/models/gpt-6-luna",
+  "usd_per_million_tokens": {
+    "input": 0.10,
+    "output": 0.50,
+    "input_reserve": 0.25
+  },
+  "budget_note": "Per-run preflight estimate, not an account spending cap or invoice. Reserve uses serialized request bytes + 1024 as a conservative input-token estimate and the maximum configured output. Input reserve also allows for cache-write pricing. No retries or automatic model escalation."
+}

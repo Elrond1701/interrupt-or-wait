@@ -1,0 +1,3 @@
+# Optional: needed only for official test execution, not data loading or demos.
+# Compatibility baseline used by this dataset; do not silently upgrade the grader.
+swebench==4.1.0

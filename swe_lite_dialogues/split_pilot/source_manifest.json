@@ -1,0 +1,39 @@
+{
+  "purpose": "Author-side task construction and isolated verification; never expose this directory to a solving agent.",
+  "sources": [
+    {
+      "path": "vendor/slugify/django/utils/text.py",
+      "url": "https://raw.githubusercontent.com/django/django/3bc4240d979812bd11365ede04c028ea13fdc8c6/django/utils/text.py",
+      "sha256": "d12459a6f55313d2898dfa03933f7ea3debabda6501421dab376696b59406ac5"
+    },
+    {
+      "path": "vendor/validation_error/django/core/exceptions.py",
+      "url": "https://raw.githubusercontent.com/django/django/16218c20606d8cd89c5393970c83da04598a3e04/django/core/exceptions.py",
+      "sha256": "d769615d353f272614405c92a322ef250bb43a4601dac69996201f64b8f247a2"
+    },
+    {
+      "path": "vendor/validation_error/django/utils/hashable.py",
+      "url": "https://raw.githubusercontent.com/django/django/16218c20606d8cd89c5393970c83da04598a3e04/django/utils/hashable.py",
+      "sha256": "a0a03b6f828c485628bbcdbbf2ea0a37c3a122bd6fff81efaa99c5b965fa09c6"
+    },
+    {
+      "path": "vendor/validation_error/tests/test_exceptions/test_validation_error.py",
+      "url": "https://raw.githubusercontent.com/django/django/16218c20606d8cd89c5393970c83da04598a3e04/tests/test_exceptions/test_validation_error.py",
+      "sha256": "92cd488ca8d6f7b783ddc6fddeedb0a44aafb450ef3568dd71aa8aafe7ced4d8"
+    },
+    {
+      "path": "vendor/LICENSE-Django.txt",
+      "url": "https://raw.githubusercontent.com/django/django/16218c20606d8cd89c5393970c83da04598a3e04/LICENSE",
+      "sha256": "b846415d1b514e9c1dff14a22deb906d794bc546ca6129f950a18cd091e2a669"
+    },
+    {
+      "path": "vendor/validation_error/django/utils/itercompat.py",
+      "url": "https://raw.githubusercontent.com/django/django/16218c20606d8cd89c5393970c83da04598a3e04/django/utils/itercompat.py",
+      "sha256": "95a7080e37338716f01b838dfca7c6d47e9534f3863a96d18675616de768d826"
+    }
+  ],
+  "upstream_revisions": {
+    "mini_swe_agent": "04d809ceab9df28f9adaed044884180159172930",
+    "swe_bench": "02e7a74ffd0b707aab73d203fe87bdc7c76afc8e"
+  }
+}

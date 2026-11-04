@@ -1,0 +1,62 @@
+{
+  "version": "slugify_contract_v1",
+  "visibility": "author_only",
+  "requirements_sha256": "92f9748f4a23ec36f0328dbf5d1b579ceb779840bb743d7de732ec1af3946d8c",
+  "contracts": [
+    {
+      "instance_id": "django__django-12983",
+      "base_commit": "3bc4240d979812bd11365ede04c028ea13fdc8c6",
+      "problem_sha256": "ca1a9bcb7cc171c0c3b552c22d9265870babb2138c29532c011af17b8934725b",
+      "context_en": "Update django.utils.text.slugify in the supplied Django repository.",
+      "requirements": [
+        {
+          "id": "trim_dashes",
+          "text_en": "Remove dashes at both ends of the resulting slug."
+        },
+        {
+          "id": "trim_boundary_underscores",
+          "text_en": "Remove underscores at both ends of the resulting slug, including mixed boundaries of dashes, underscores and whitespace."
+        },
+        {
+          "id": "keep_internal_underscores",
+          "text_en": "Preserve underscores inside the resulting slug."
+        },
+        {
+          "id": "keep_normalization",
+          "text_en": "Preserve other existing normalization, except where the currently requested underscore or boundary rules explicitly change it."
+        }
+      ],
+      "final_summary_en": "Update django.utils.text.slugify so the normalized result has no dashes or underscores at either end, including mixed boundaries of dashes, underscores and whitespace. Preserve underscores inside the slug and all other existing normalization behavior.",
+      "temporary_requirements": [
+        {
+          "id": "remove_all_underscores",
+          "text_en": "Remove every underscore from the resulting slug, including internal ones.",
+          "replaced_by": [
+            "trim_boundary_underscores",
+            "keep_internal_underscores"
+          ]
+        }
+      ],
+      "uncertainties": [
+        {
+          "id": "underscore_scope",
+          "description": "Which underscores should be considered unwanted?",
+          "plausible_interpretations": [
+            "Remove all underscores, including internal ones.",
+            "Remove only boundary underscores and preserve internal ones."
+          ],
+          "resolved_by": [
+            "trim_boundary_underscores",
+            "keep_internal_underscores"
+          ]
+        }
+      ],
+      "provenance": "Behavioral paraphrases of requirements.json addition/revision annotations; no test code or gold patch is sent to the drafting model.",
+      "review_status": "assistant_reviewed_local_only; independent review and full environment validation pending",
+      "source_scenarios": [
+        "django__django-12983.addition.v0",
+        "django__django-12983.revision.v0"
+      ]
+    }
+  ]
+}

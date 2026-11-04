@@ -1,0 +1,160 @@
+{
+  "version": "v6_fixed_multistage",
+  "visibility": "author_only",
+  "contract_sha256": "955880d7f58b8d8bc2568b4970b3b392294cd286c9acd6b61e74c59cb9ebb42e",
+  "instance_id": "django__django-12983",
+  "uncertainty_choices": {
+    "underscore_scope": [
+      [
+        "remove_all_underscores"
+      ],
+      [
+        "trim_boundary_underscores",
+        "keep_internal_underscores"
+      ]
+    ]
+  },
+  "variants": {
+    "addition": {
+      "stages": [
+        {
+          "id": "U0",
+          "type": "initial",
+          "add": [
+            "trim_dashes",
+            "keep_normalization"
+          ],
+          "remove": [],
+          "resolves": {},
+          "unknown": [],
+          "reference": "dash_only"
+        },
+        {
+          "id": "U1",
+          "type": "addition",
+          "add": [
+            "trim_boundary_underscores",
+            "keep_internal_underscores"
+          ],
+          "remove": [],
+          "resolves": {},
+          "reference": "gold"
+        }
+      ]
+    },
+    "clarification": {
+      "stages": [
+        {
+          "id": "U0",
+          "type": "initial",
+          "add": [
+            "trim_dashes",
+            "keep_normalization"
+          ],
+          "remove": [],
+          "resolves": {},
+          "unknown": [
+            "underscore_scope"
+          ],
+          "reference": "remove_all"
+        },
+        {
+          "id": "U1",
+          "type": "clarification",
+          "add": [
+            "trim_boundary_underscores",
+            "keep_internal_underscores"
+          ],
+          "remove": [],
+          "resolves": {
+            "underscore_scope": [
+              "trim_boundary_underscores",
+              "keep_internal_underscores"
+            ]
+          },
+          "reference": "gold"
+        }
+      ]
+    },
+    "revision": {
+      "stages": [
+        {
+          "id": "U0",
+          "type": "initial",
+          "add": [
+            "trim_dashes",
+            "keep_normalization",
+            "remove_all_underscores"
+          ],
+          "remove": [],
+          "resolves": {},
+          "unknown": [],
+          "reference": "remove_all"
+        },
+        {
+          "id": "U1",
+          "type": "revision",
+          "add": [
+            "trim_boundary_underscores",
+            "keep_internal_underscores"
+          ],
+          "remove": [
+            "remove_all_underscores"
+          ],
+          "resolves": {},
+          "reference": "gold"
+        }
+      ]
+    },
+    "clarification_revision": {
+      "stages": [
+        {
+          "id": "U0",
+          "type": "initial",
+          "add": [
+            "trim_dashes",
+            "keep_normalization"
+          ],
+          "remove": [],
+          "resolves": {},
+          "unknown": [
+            "underscore_scope"
+          ],
+          "reference": "dash_only"
+        },
+        {
+          "id": "U1",
+          "type": "clarification",
+          "add": [
+            "remove_all_underscores"
+          ],
+          "remove": [],
+          "resolves": {
+            "underscore_scope": [
+              "remove_all_underscores"
+            ]
+          },
+          "reference": "remove_all"
+        },
+        {
+          "id": "U2",
+          "type": "revision",
+          "add": [
+            "trim_boundary_underscores",
+            "keep_internal_underscores"
+          ],
+          "remove": [
+            "remove_all_underscores"
+          ],
+          "resolves": {},
+          "reference": "gold"
+        }
+      ]
+    }
+  },
+  "environment_evidence": {
+    "directory": "docker_validation/slugify_v3",
+    "checksums_sha256": "64801a0419c148ae11bdaf7f4989c24bb8df43d6dd1434c7f0e110dc3c39ad46"
+  },
+  "note": "Author-fixed plans. U2 follows the previously validated preview; no new final goal. V6 initially supports this one original task."
+}

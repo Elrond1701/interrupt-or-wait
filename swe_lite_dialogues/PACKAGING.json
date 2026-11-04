@@ -1,0 +1,27 @@
+{
+  "release": "team_v1",
+  "dataset": "basic_v34",
+  "source_manifest_sha256": "ebc1eea85025cae662973324607630f24d4dc14a30ef82dce01fb3736fc55b92",
+  "preserved_files": {
+    "benchmark_output/basic_v34/examples.md": "8f396f3068763acdf84bae66e0ce4d8901ccb52ca629a5d69dc09d02898aa86c",
+    "benchmark_output/basic_v34/evaluation_sources.jsonl": "25636a49549c7970a844106355023b3e1b5ead3a4aa4ee84b191e30fc8f20365",
+    "benchmark_output/basic_v34/statistics.json": "50bf7066b80a289d3d552d9c1504965cb2d761b2bfd6f23895111df8756460e3",
+    "benchmark_output/basic_v34/coverage.json": "e43020da4a86752fa2199bb9e31336e6c6ccb7418a810273e1783750fa65acd1",
+    "benchmark_output/basic_v34/candidates.jsonl": "5032cbd80599de8b50e74c21223ce9f7e26168ff5996f7f4298ca2355e1b239f",
+    "data/lite_snapshot.json.gz": "0f31dac7beec72fbd0b63e092e67551eaba5c1e02e25f814064d31ec0affc39c"
+  },
+  "changes": [
+    "Sanitized local error paths in dataset manifest and updated its hash in preview.",
+    "Replaced preview links to omitted logs with an explicit archive note.",
+    "Updated evaluation config to describe all three historical author runtime checks.",
+    "Pointed the existing scoring tests at the included latest dataset.",
+    "Replaced four historical-dataset dependencies in construction tests with fresh reviewed fixtures or the shipped dataset. Production pipeline code is unchanged."
+  ],
+  "omitted": [
+    "Local credentials, account config, Git metadata and virtual environments",
+    "Historical generation runs, evaluator jobs and Docker logs",
+    "Old dataset versions and unrelated experiment entrypoints",
+    "Legacy pilot-only task cards, calibration list and verification reports"
+  ],
+  "scope": "Current source-batch generation, data use, delivery and final scoring. Full replay or merging historical candidates requires the separate author audit archive."
+}

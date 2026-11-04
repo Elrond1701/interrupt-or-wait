@@ -1,0 +1,40 @@
+{
+  "visibility": "author_controller_and_external_evaluator_only",
+  "candidate_count": 152,
+  "selection_policy": "one_conversation_per_original",
+  "input_candidate_count": 152,
+  "original_task_count": 152,
+  "trajectory_type_distribution": {
+    "cumulative": 12,
+    "clarification": 36,
+    "revision": 18,
+    "mixed": 86
+  },
+  "message_count_distribution": {
+    "2": 59,
+    "3": 93
+  },
+  "repository_count": 10,
+  "environment_validated_original_task_count": 1,
+  "experiment_ready_count": 0,
+  "excluded": [
+    {
+      "run": "source_runs/scale_out_v1/batch_022/django__django-16527/generation",
+      "reason": "Generation was not admitted: no reviewed contract link was available. Historical diagnostics are kept in the separate author archive."
+    },
+    {
+      "run": "source_runs/scale_out_v1/batch_022/django__django-16816/generation",
+      "reason": "Generation was not admitted: no reviewed contract link was available. Historical diagnostics are kept in the separate author archive."
+    }
+  ],
+  "files": {
+    "candidates.jsonl": "5032cbd80599de8b50e74c21223ce9f7e26168ff5996f7f4298ca2355e1b239f",
+    "evaluation_sources.jsonl": "25636a49549c7970a844106355023b3e1b5ead3a4aa4ee84b191e30fc8f20365"
+  },
+  "note": "Development dataset. Source test mapping is not test execution or proof of complete semantic coverage.",
+  "packaging": {
+    "version": "team_v1",
+    "source_manifest_sha256": "ebc1eea85025cae662973324607630f24d4dc14a30ef82dce01fb3736fc55b92",
+    "changes": "Removed local filesystem paths from exclusion diagnostics. Candidate and scoring JSONL files are byte-for-byte unchanged."
+  }
+}

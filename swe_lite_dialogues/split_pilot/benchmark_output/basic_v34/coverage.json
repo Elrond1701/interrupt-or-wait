@@ -1,0 +1,636 @@
+{
+  "reviewed_variant_counts": {
+    "cumulative": 12,
+    "clarification": 36,
+    "revision": 18,
+    "mixed": 86
+  },
+  "counted_original_class_pairs": {
+    "cumulative": 12,
+    "clarification": 36,
+    "revision": 18,
+    "mixed": 86
+  },
+  "distinct_originals_by_class": {
+    "cumulative": [
+      "django__django-13220",
+      "django__django-13401",
+      "django__django-13757",
+      "django__django-14017",
+      "matplotlib__matplotlib-25311",
+      "pytest-dev__pytest-5692",
+      "pytest-dev__pytest-8365",
+      "sphinx-doc__sphinx-8435",
+      "sympy__sympy-14308",
+      "sympy__sympy-15346",
+      "sympy__sympy-17630",
+      "sympy__sympy-18698"
+    ],
+    "clarification": [
+      "astropy__astropy-12907",
+      "astropy__astropy-14365",
+      "astropy__astropy-6938",
+      "astropy__astropy-7746",
+      "django__django-10924",
+      "django__django-11039",
+      "django__django-11049",
+      "django__django-11848",
+      "django__django-12184",
+      "django__django-12284",
+      "django__django-12286",
+      "django__django-12453",
+      "matplotlib__matplotlib-22835",
+      "matplotlib__matplotlib-23299",
+      "matplotlib__matplotlib-23314",
+      "matplotlib__matplotlib-23476",
+      "matplotlib__matplotlib-25498",
+      "mwaskom__seaborn-2848",
+      "mwaskom__seaborn-3190",
+      "mwaskom__seaborn-3407",
+      "pydata__xarray-5131",
+      "pylint-dev__pylint-5859",
+      "pylint-dev__pylint-7080",
+      "pylint-dev__pylint-7993",
+      "pytest-dev__pytest-11143",
+      "pytest-dev__pytest-7432",
+      "pytest-dev__pytest-8906",
+      "scikit-learn__scikit-learn-10297",
+      "scikit-learn__scikit-learn-14087",
+      "scikit-learn__scikit-learn-14983",
+      "sphinx-doc__sphinx-11445",
+      "sphinx-doc__sphinx-7738",
+      "sphinx-doc__sphinx-8627",
+      "sphinx-doc__sphinx-8721",
+      "sympy__sympy-12236",
+      "sympy__sympy-14396"
+    ],
+    "revision": [
+      "django__django-11999",
+      "django__django-14752",
+      "django__django-14787",
+      "matplotlib__matplotlib-26020",
+      "scikit-learn__scikit-learn-25500",
+      "scikit-learn__scikit-learn-25638",
+      "sphinx-doc__sphinx-7975",
+      "sphinx-doc__sphinx-8595",
+      "sympy__sympy-12481",
+      "sympy__sympy-13773",
+      "sympy__sympy-14317",
+      "sympy__sympy-14817",
+      "sympy__sympy-21627",
+      "sympy__sympy-21847",
+      "sympy__sympy-22005",
+      "sympy__sympy-22714",
+      "sympy__sympy-22840",
+      "sympy__sympy-23117"
+    ],
+    "mixed": [
+      "astropy__astropy-14995",
+      "django__django-11742",
+      "django__django-12497",
+      "django__django-12589",
+      "django__django-12908",
+      "django__django-12915",
+      "django__django-12983",
+      "django__django-13028",
+      "django__django-13033",
+      "django__django-13158",
+      "django__django-13230",
+      "django__django-13315",
+      "django__django-13448",
+      "django__django-13551",
+      "django__django-13590",
+      "django__django-13658",
+      "django__django-13710",
+      "django__django-13925",
+      "django__django-13964",
+      "django__django-14016",
+      "django__django-14155",
+      "django__django-14238",
+      "django__django-14382",
+      "django__django-14411",
+      "django__django-14855",
+      "django__django-14997",
+      "django__django-14999",
+      "django__django-15061",
+      "django__django-15202",
+      "django__django-15213",
+      "django__django-15347",
+      "django__django-15388",
+      "django__django-15498",
+      "django__django-15738",
+      "django__django-15781",
+      "django__django-15789",
+      "django__django-15790",
+      "django__django-15814",
+      "django__django-15819",
+      "django__django-15851",
+      "django__django-15996",
+      "django__django-16041",
+      "django__django-16046",
+      "django__django-16139",
+      "django__django-16229",
+      "django__django-16255",
+      "django__django-16379",
+      "django__django-16400",
+      "django__django-16408",
+      "django__django-16595",
+      "django__django-16820",
+      "django__django-16873",
+      "django__django-16910",
+      "django__django-17087",
+      "matplotlib__matplotlib-25433",
+      "scikit-learn__scikit-learn-13779",
+      "scikit-learn__scikit-learn-25570",
+      "sphinx-doc__sphinx-8282",
+      "sympy__sympy-14774",
+      "sympy__sympy-15011",
+      "sympy__sympy-15308",
+      "sympy__sympy-15609",
+      "sympy__sympy-16503",
+      "sympy__sympy-16792",
+      "sympy__sympy-17139",
+      "sympy__sympy-17655",
+      "sympy__sympy-18057",
+      "sympy__sympy-18087",
+      "sympy__sympy-18189",
+      "sympy__sympy-18621",
+      "sympy__sympy-19007",
+      "sympy__sympy-20154",
+      "sympy__sympy-20212",
+      "sympy__sympy-20322",
+      "sympy__sympy-20590",
+      "sympy__sympy-20639",
+      "sympy__sympy-21055",
+      "sympy__sympy-21171",
+      "sympy__sympy-21379",
+      "sympy__sympy-21614",
+      "sympy__sympy-23191",
+      "sympy__sympy-23262",
+      "sympy__sympy-24066",
+      "sympy__sympy-24102",
+      "sympy__sympy-24152",
+      "sympy__sympy-24909"
+    ]
+  },
+  "existing_classes_by_original": {
+    "astropy__astropy-12907": [
+      "clarification"
+    ],
+    "astropy__astropy-14365": [
+      "clarification"
+    ],
+    "astropy__astropy-14995": [
+      "mixed"
+    ],
+    "astropy__astropy-6938": [
+      "clarification"
+    ],
+    "astropy__astropy-7746": [
+      "clarification"
+    ],
+    "django__django-10924": [
+      "clarification"
+    ],
+    "django__django-11039": [
+      "clarification"
+    ],
+    "django__django-11049": [
+      "clarification"
+    ],
+    "django__django-11742": [
+      "mixed"
+    ],
+    "django__django-11848": [
+      "clarification"
+    ],
+    "django__django-11999": [
+      "revision"
+    ],
+    "django__django-12184": [
+      "clarification"
+    ],
+    "django__django-12284": [
+      "clarification"
+    ],
+    "django__django-12286": [
+      "clarification"
+    ],
+    "django__django-12453": [
+      "clarification"
+    ],
+    "django__django-12497": [
+      "mixed"
+    ],
+    "django__django-12589": [
+      "mixed"
+    ],
+    "django__django-12908": [
+      "mixed"
+    ],
+    "django__django-12915": [
+      "mixed"
+    ],
+    "django__django-12983": [
+      "mixed"
+    ],
+    "django__django-13028": [
+      "mixed"
+    ],
+    "django__django-13033": [
+      "mixed"
+    ],
+    "django__django-13158": [
+      "mixed"
+    ],
+    "django__django-13220": [
+      "cumulative"
+    ],
+    "django__django-13230": [
+      "mixed"
+    ],
+    "django__django-13315": [
+      "mixed"
+    ],
+    "django__django-13401": [
+      "cumulative"
+    ],
+    "django__django-13448": [
+      "mixed"
+    ],
+    "django__django-13551": [
+      "mixed"
+    ],
+    "django__django-13590": [
+      "mixed"
+    ],
+    "django__django-13658": [
+      "mixed"
+    ],
+    "django__django-13710": [
+      "mixed"
+    ],
+    "django__django-13757": [
+      "cumulative"
+    ],
+    "django__django-13925": [
+      "mixed"
+    ],
+    "django__django-13964": [
+      "mixed"
+    ],
+    "django__django-14016": [
+      "mixed"
+    ],
+    "django__django-14017": [
+      "cumulative"
+    ],
+    "django__django-14155": [
+      "mixed"
+    ],
+    "django__django-14238": [
+      "mixed"
+    ],
+    "django__django-14382": [
+      "mixed"
+    ],
+    "django__django-14411": [
+      "mixed"
+    ],
+    "django__django-14752": [
+      "revision"
+    ],
+    "django__django-14787": [
+      "revision"
+    ],
+    "django__django-14855": [
+      "mixed"
+    ],
+    "django__django-14997": [
+      "mixed"
+    ],
+    "django__django-14999": [
+      "mixed"
+    ],
+    "django__django-15061": [
+      "mixed"
+    ],
+    "django__django-15202": [
+      "mixed"
+    ],
+    "django__django-15213": [
+      "mixed"
+    ],
+    "django__django-15347": [
+      "mixed"
+    ],
+    "django__django-15388": [
+      "mixed"
+    ],
+    "django__django-15498": [
+      "mixed"
+    ],
+    "django__django-15738": [
+      "mixed"
+    ],
+    "django__django-15781": [
+      "mixed"
+    ],
+    "django__django-15789": [
+      "mixed"
+    ],
+    "django__django-15790": [
+      "mixed"
+    ],
+    "django__django-15814": [
+      "mixed"
+    ],
+    "django__django-15819": [
+      "mixed"
+    ],
+    "django__django-15851": [
+      "mixed"
+    ],
+    "django__django-15996": [
+      "mixed"
+    ],
+    "django__django-16041": [
+      "mixed"
+    ],
+    "django__django-16046": [
+      "mixed"
+    ],
+    "django__django-16139": [
+      "mixed"
+    ],
+    "django__django-16229": [
+      "mixed"
+    ],
+    "django__django-16255": [
+      "mixed"
+    ],
+    "django__django-16379": [
+      "mixed"
+    ],
+    "django__django-16400": [
+      "mixed"
+    ],
+    "django__django-16408": [
+      "mixed"
+    ],
+    "django__django-16595": [
+      "mixed"
+    ],
+    "django__django-16820": [
+      "mixed"
+    ],
+    "django__django-16873": [
+      "mixed"
+    ],
+    "django__django-16910": [
+      "mixed"
+    ],
+    "django__django-17087": [
+      "mixed"
+    ],
+    "matplotlib__matplotlib-22835": [
+      "clarification"
+    ],
+    "matplotlib__matplotlib-23299": [
+      "clarification"
+    ],
+    "matplotlib__matplotlib-23314": [
+      "clarification"
+    ],
+    "matplotlib__matplotlib-23476": [
+      "clarification"
+    ],
+    "matplotlib__matplotlib-25311": [
+      "cumulative"
+    ],
+    "matplotlib__matplotlib-25433": [
+      "mixed"
+    ],
+    "matplotlib__matplotlib-25498": [
+      "clarification"
+    ],
+    "matplotlib__matplotlib-26020": [
+      "revision"
+    ],
+    "mwaskom__seaborn-2848": [
+      "clarification"
+    ],
+    "mwaskom__seaborn-3190": [
+      "clarification"
+    ],
+    "mwaskom__seaborn-3407": [
+      "clarification"
+    ],
+    "pydata__xarray-5131": [
+      "clarification"
+    ],
+    "pylint-dev__pylint-5859": [
+      "clarification"
+    ],
+    "pylint-dev__pylint-7080": [
+      "clarification"
+    ],
+    "pylint-dev__pylint-7993": [
+      "clarification"
+    ],
+    "pytest-dev__pytest-11143": [
+      "clarification"
+    ],
+    "pytest-dev__pytest-5692": [
+      "cumulative"
+    ],
+    "pytest-dev__pytest-7432": [
+      "clarification"
+    ],
+    "pytest-dev__pytest-8365": [
+      "cumulative"
+    ],
+    "pytest-dev__pytest-8906": [
+      "clarification"
+    ],
+    "scikit-learn__scikit-learn-10297": [
+      "clarification"
+    ],
+    "scikit-learn__scikit-learn-13779": [
+      "mixed"
+    ],
+    "scikit-learn__scikit-learn-14087": [
+      "clarification"
+    ],
+    "scikit-learn__scikit-learn-14983": [
+      "clarification"
+    ],
+    "scikit-learn__scikit-learn-25500": [
+      "revision"
+    ],
+    "scikit-learn__scikit-learn-25570": [
+      "mixed"
+    ],
+    "scikit-learn__scikit-learn-25638": [
+      "revision"
+    ],
+    "sphinx-doc__sphinx-11445": [
+      "clarification"
+    ],
+    "sphinx-doc__sphinx-7738": [
+      "clarification"
+    ],
+    "sphinx-doc__sphinx-7975": [
+      "revision"
+    ],
+    "sphinx-doc__sphinx-8282": [
+      "mixed"
+    ],
+    "sphinx-doc__sphinx-8435": [
+      "cumulative"
+    ],
+    "sphinx-doc__sphinx-8595": [
+      "revision"
+    ],
+    "sphinx-doc__sphinx-8627": [
+      "clarification"
+    ],
+    "sphinx-doc__sphinx-8721": [
+      "clarification"
+    ],
+    "sympy__sympy-12236": [
+      "clarification"
+    ],
+    "sympy__sympy-12481": [
+      "revision"
+    ],
+    "sympy__sympy-13773": [
+      "revision"
+    ],
+    "sympy__sympy-14308": [
+      "cumulative"
+    ],
+    "sympy__sympy-14317": [
+      "revision"
+    ],
+    "sympy__sympy-14396": [
+      "clarification"
+    ],
+    "sympy__sympy-14774": [
+      "mixed"
+    ],
+    "sympy__sympy-14817": [
+      "revision"
+    ],
+    "sympy__sympy-15011": [
+      "mixed"
+    ],
+    "sympy__sympy-15308": [
+      "mixed"
+    ],
+    "sympy__sympy-15346": [
+      "cumulative"
+    ],
+    "sympy__sympy-15609": [
+      "mixed"
+    ],
+    "sympy__sympy-16503": [
+      "mixed"
+    ],
+    "sympy__sympy-16792": [
+      "mixed"
+    ],
+    "sympy__sympy-17139": [
+      "mixed"
+    ],
+    "sympy__sympy-17630": [
+      "cumulative"
+    ],
+    "sympy__sympy-17655": [
+      "mixed"
+    ],
+    "sympy__sympy-18057": [
+      "mixed"
+    ],
+    "sympy__sympy-18087": [
+      "mixed"
+    ],
+    "sympy__sympy-18189": [
+      "mixed"
+    ],
+    "sympy__sympy-18621": [
+      "mixed"
+    ],
+    "sympy__sympy-18698": [
+      "cumulative"
+    ],
+    "sympy__sympy-19007": [
+      "mixed"
+    ],
+    "sympy__sympy-20154": [
+      "mixed"
+    ],
+    "sympy__sympy-20212": [
+      "mixed"
+    ],
+    "sympy__sympy-20322": [
+      "mixed"
+    ],
+    "sympy__sympy-20590": [
+      "mixed"
+    ],
+    "sympy__sympy-20639": [
+      "mixed"
+    ],
+    "sympy__sympy-21055": [
+      "mixed"
+    ],
+    "sympy__sympy-21171": [
+      "mixed"
+    ],
+    "sympy__sympy-21379": [
+      "mixed"
+    ],
+    "sympy__sympy-21614": [
+      "mixed"
+    ],
+    "sympy__sympy-21627": [
+      "revision"
+    ],
+    "sympy__sympy-21847": [
+      "revision"
+    ],
+    "sympy__sympy-22005": [
+      "revision"
+    ],
+    "sympy__sympy-22714": [
+      "revision"
+    ],
+    "sympy__sympy-22840": [
+      "revision"
+    ],
+    "sympy__sympy-23117": [
+      "revision"
+    ],
+    "sympy__sympy-23191": [
+      "mixed"
+    ],
+    "sympy__sympy-23262": [
+      "mixed"
+    ],
+    "sympy__sympy-24066": [
+      "mixed"
+    ],
+    "sympy__sympy-24102": [
+      "mixed"
+    ],
+    "sympy__sympy-24152": [
+      "mixed"
+    ],
+    "sympy__sympy-24909": [
+      "mixed"
+    ]
+  },
+  "ignored_unreviewed_scenarios": 0,
+  "extra_wordings_not_counted": 0
+}

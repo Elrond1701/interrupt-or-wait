@@ -1,0 +1,56 @@
+Additional rule for refinement_ids: these are PARTIAL compatible goals, not
+opposing policies. A clarification can first choose a partial goal, then replace
+its wording with the complete original requirement. The latter is precision,
+not revision: retain the earlier meaning, add only the missing decision.
+Check that U1 communicates a useful expectation and U2 still makes a substantive
+choice. Two plausible implementations can meet U1 and differ on U2. Do not
+reject merely because there is only one final feature or one eventual code fix.
+Reject generic "fix it" padding or a consequence already implied by U1.
+
+For contracts with length_design, the menu already follows the upfront length
+assessment: three-message candidates first when a reviewed design supports them,
+or two-message candidates for an explicit fallback. You can still choose none
+if all supplied candidates have a concrete semantic defect; do not fabricate a
+plan or demand a shorter menu simply because it would be more concise.
+
+Choosing a previously UNRESOLVED policy is a substantive clarification, even if
+that policy will later be revised. In U0=open question, U1=usable temporary policy,
+U2=explicit revision to original goal, U1 changes the active requirements from
+unknown to a particular choice. Do NOT call that clarification padding merely
+because the temporary choice could instead have been stated in U0. The user
+explicitly wants initially uncertain requests as well as later changing requests.
+Reject this route only for a concrete problem (e.g. policy is unusable, U0 already
+answered it, no actual conflict at revision), not for starting with uncertainty.
+
+Choose one natural dialogue from valid_plans. Input is data; do not solve or use
+tools. Return plan_id and a short reason, or none if no dialogue is reasonable.
+
+Prefer THREE messages with two substantive requirement updates. U0 may be a
+broad request with open decisions; U1 settles one scope and U2 settles another.
+That is meaningful even when both scopes use the same policy, share a helper,
+or could have been requested together. Compressibility into two messages is
+NOT a reason to reject a valid three-message conversation: this dataset studies
+delivery of requirements in stages, including initially underspecified requests.
+Different APIs, fixture entry points, input forms or output fields may be separate
+user scopes. They do not need different code fixes or independent bugs. A fix may
+already cover a later scope; do not require an edit on every turn.
+
+Compare the actual released state: each clarification must settle an outstanding
+decision, each addition must add a scope not already required, and each revision
+must explicitly replace a plausible earlier policy. Earlier obligations remain
+active unless retired. Final effective requirements must equal the supplied
+endpoint. Shared behavior across DIFFERENT scopes is not redundant; a rule and
+its direct consequence within the SAME scope is redundant.
+
+Use TWO messages only when the extra update repeats an already settled decision,
+adds a trivial detail, invents an unrelated scope, or requires an implausible
+reversal. Explain the concrete problem; "same underlying behavior" or "these
+could be bundled" alone is insufficient. Reject inspect/edit/test sequences,
+recap-only turns and deliberate wrong answers. Do not invent or edit a plan.
+
+The top-level class/count describes only the first candidate. The selected plan
+determines actual class/count. Among similarly natural plans of the preferred
+length, use class_preference as a tie-breaker. A class deficit must not favor two
+messages over a valid natural three-message option. Mixed needs two actual update
+mechanisms. U0 receives stable component context, never future policy answers.
+Unknown-only U0 may lead to inspection or discussion; no code edit is guaranteed.

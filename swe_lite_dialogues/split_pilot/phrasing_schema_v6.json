@@ -1,0 +1,58 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "decision",
+    "reason",
+    "messages",
+    "risks"
+  ],
+  "properties": {
+    "decision": {
+      "type": "string",
+      "enum": [
+        "propose_split",
+        "defer"
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 600
+    },
+    "messages": {
+      "type": "array",
+      "maxItems": 3,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "content"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "enum": [
+              "U0",
+              "U1",
+              "U2"
+            ]
+          },
+          "content": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1800
+          }
+        }
+      }
+    },
+    "risks": {
+      "type": "array",
+      "maxItems": 4,
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "type": "object", "additionalProperties": false,
+  "required": ["decision", "reason", "update_type", "initial_message_en", "initial_requirement_ids", "unresolved_dimensions", "update_transition_en", "add_requirement_ids", "remove_requirement_ids", "change_explanation", "contrast_case", "risks"],
+  "properties": {
+    "decision": {"type": "string", "enum": ["propose_split", "defer"]},
+    "reason": {"type": "string", "minLength": 1},
+    "update_type": {"type": "string", "enum": ["addition", "clarification", "revision"]},
+    "initial_message_en": {"type": "string", "maxLength": 1800},
+    "initial_requirement_ids": {"type": "array", "maxItems": 8, "items": {"type": "string"}},
+    "unresolved_dimensions": {"type": "array", "maxItems": 1, "items": {"type": "string"}},
+    "update_transition_en": {"type": "string", "maxLength": 1200},
+    "add_requirement_ids": {"type": "array", "maxItems": 8, "items": {"type": "string"}},
+    "remove_requirement_ids": {"type": "array", "maxItems": 2, "items": {"type": "string"}},
+    "change_explanation": {"type": "string"},
+    "contrast_case": {
+      "type": "object", "additionalProperties": false,
+      "required": ["input", "earlier_output", "final_output", "earlier_basis"],
+      "properties": {
+        "input": {"type": "string", "maxLength": 200},
+        "earlier_output": {"type": "string", "maxLength": 200},
+        "final_output": {"type": "string", "maxLength": 200},
+        "earlier_basis": {"type": "string"}
+      }
+    },
+    "risks": {"type": "array", "maxItems": 5, "items": {"type": "string"}}
+  }
+}

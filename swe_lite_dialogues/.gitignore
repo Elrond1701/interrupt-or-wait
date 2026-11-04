@@ -1,0 +1,35 @@
+# Credentials and personal tool state
+.env
+.env.*
+!.env.example
+.secrets/
+.codex/
+.aws/
+auth.json
+*.pem
+*.key
+
+# Local environments and caches
+.venv/
+.venv-*/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.DS_Store
+
+# Generated author-side runs may include machine paths and private diagnostics
+/outputs/
+/split_pilot/source_runs/*
+!/split_pilot/source_runs/.gitkeep
+/split_pilot/codex_runs/
+/split_pilot/planned_runs/
+/split_pilot/model_output/
+/split_pilot/pipeline_output/
+/split_pilot/evaluation_runs/
+/split_pilot/docker_validation/
+/split_pilot/solver_runs/
+/split_pilot/logs/
+
+# Keep only the selected release in Git by default
+/split_pilot/benchmark_output/*
+!/split_pilot/benchmark_output/basic_v34/

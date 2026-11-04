@@ -1,0 +1,228 @@
+{
+  "version": "fixed_stages_v1",
+  "visibility": "author_controller_only",
+  "snapshot_sha256": "0f31dac7beec72fbd0b63e092e67551eaba5c1e02e25f814064d31ec0affc39c",
+  "notes": [
+    "Stage plans and contrast probes are prepared once by the author, not inferred by the wording model.",
+    "Same source variants stay in the same development/evaluation group."
+  ],
+  "contracts": [
+    {
+      "instance_id": "django__django-12983",
+      "base_commit": "3bc4240d979812bd11365ede04c028ea13fdc8c6",
+      "problem_sha256": "ca1a9bcb7cc171c0c3b552c22d9265870babb2138c29532c011af17b8934725b",
+      "context_en": "Update django.utils.text.slugify in the supplied Django repository.",
+      "requirements": [
+        {
+          "id": "trim_dashes",
+          "text_en": "Remove dashes at both ends of the resulting slug."
+        },
+        {
+          "id": "trim_boundary_underscores",
+          "text_en": "Remove underscores at both ends of the resulting slug, including mixed boundaries of dashes, underscores and whitespace."
+        },
+        {
+          "id": "keep_internal_underscores",
+          "text_en": "Preserve underscores inside the resulting slug."
+        },
+        {
+          "id": "keep_normalization",
+          "text_en": "Preserve other existing normalization, except where the currently requested underscore or boundary rules explicitly change it."
+        }
+      ],
+      "final_summary_en": "Update django.utils.text.slugify so the normalized result has no dashes or underscores at either end, including mixed boundaries of dashes, underscores and whitespace. Preserve underscores inside the slug and all other existing normalization behavior.",
+      "temporary_requirements": [
+        {
+          "id": "remove_all_underscores",
+          "text_en": "Remove every underscore from the resulting slug, including internal ones.",
+          "replaced_by": [
+            "trim_boundary_underscores",
+            "keep_internal_underscores"
+          ]
+        }
+      ],
+      "uncertainties": [
+        {
+          "id": "underscore_scope",
+          "description": "Which underscores should be considered unwanted?",
+          "plausible_interpretations": [
+            "Remove all underscores, including internal ones.",
+            "Remove only boundary underscores and preserve internal ones."
+          ],
+          "resolved_by": [
+            "trim_boundary_underscores",
+            "keep_internal_underscores"
+          ]
+        }
+      ],
+      "provenance": "Behavioral paraphrases of requirements.json addition/revision annotations; no test code or gold patch is sent to the drafting model.",
+      "review_status": "assistant_reviewed_local_only; independent review and full environment validation pending",
+      "source_scenarios": [
+        "django__django-12983.addition.v0",
+        "django__django-12983.revision.v0"
+      ],
+      "source_row_sha256": "71e7c6707cdbf460891f75003ff630b225a83d981db246b7aa231dd31f4dbed1",
+      "vendor_hashes": {
+        "vendor/slugify/django/utils/text.py": "d12459a6f55313d2898dfa03933f7ea3debabda6501421dab376696b59406ac5"
+      },
+      "source_contract_sha256": "51a63c5fbe68ea1f1368d2fbb13834b01c689968b02e0d216eebf90bc809924b",
+      "plans": {
+        "addition": {
+          "initial_requirement_ids": [
+            "trim_dashes",
+            "keep_normalization"
+          ],
+          "unresolved_dimensions": [],
+          "add_requirement_ids": [
+            "trim_boundary_underscores",
+            "keep_internal_underscores"
+          ],
+          "remove_requirement_ids": [],
+          "contrast_case": {
+            "input": "__A_B__",
+            "earlier_output": "__a_b__",
+            "final_output": "a_b",
+            "earlier_basis": "Fixed author-side witness; clarification uses one possible interpretation, not a unique early answer."
+          }
+        },
+        "clarification": {
+          "initial_requirement_ids": [
+            "trim_dashes",
+            "keep_normalization"
+          ],
+          "unresolved_dimensions": [
+            "underscore_scope"
+          ],
+          "add_requirement_ids": [
+            "trim_boundary_underscores",
+            "keep_internal_underscores"
+          ],
+          "remove_requirement_ids": [],
+          "contrast_case": {
+            "input": "__A_B__",
+            "earlier_output": "ab",
+            "final_output": "a_b",
+            "earlier_basis": "Fixed author-side witness; clarification uses one possible interpretation, not a unique early answer."
+          }
+        },
+        "revision": {
+          "initial_requirement_ids": [
+            "trim_dashes",
+            "keep_normalization",
+            "remove_all_underscores"
+          ],
+          "unresolved_dimensions": [],
+          "add_requirement_ids": [
+            "trim_boundary_underscores",
+            "keep_internal_underscores"
+          ],
+          "remove_requirement_ids": [
+            "remove_all_underscores"
+          ],
+          "contrast_case": {
+            "input": "__A_B__",
+            "earlier_output": "ab",
+            "final_output": "a_b",
+            "earlier_basis": "Fixed author-side witness; clarification uses one possible interpretation, not a unique early answer."
+          }
+        }
+      }
+    },
+    {
+      "instance_id": "django__django-11099",
+      "base_commit": "d26b2424437dabeeca94d7900b37d2df4410da0c",
+      "problem_sha256": "b0526bc6d9268fe373bf624621c8d5f560fc6b0ffae7e64b460d84f6726f3ed5",
+      "source_row_sha256": "7f79b4235ae97d886cf2213828f8392c37cfa802bdd8625c91a907b796f25f14",
+      "context_en": "Update Django username validation in django.contrib.auth.validators.",
+      "requirements": [
+        {
+          "id": "ascii_reject_newline",
+          "text_en": "ASCIIUsernameValidator must reject usernames ending in a newline.",
+          "evidence": {
+            "field": "test_patch",
+            "quote": "'trailingnewline\\n'"
+          }
+        },
+        {
+          "id": "unicode_reject_newline",
+          "text_en": "UnicodeUsernameValidator must reject usernames ending in a newline.",
+          "evidence": {
+            "field": "test_patch",
+            "quote": "'trailingnewline\\u000A'"
+          }
+        },
+        {
+          "id": "preserve_character_rules",
+          "text_en": "Keep existing allowed-character rules and the distinction between ASCII-only and Unicode usernames; preserve unrelated validation behavior.",
+          "evidence": {
+            "field": "problem_statement",
+            "quote": "The intent is to only allow alphanumeric characters as well as ., @, +, and -."
+          }
+        }
+      ],
+      "final_summary_en": "Update ASCIIUsernameValidator and UnicodeUsernameValidator in django.contrib.auth.validators so both reject usernames ending in a newline. Preserve their existing allowed-character rules, their ASCII-versus-Unicode distinction, and unrelated validation behavior.",
+      "temporary_requirements": [],
+      "uncertainties": [
+        {
+          "id": "validator_scope",
+          "description": "Whether the trailing-newline fix should also cover UnicodeUsernameValidator.",
+          "plausible_interpretations": [
+            "Apply the fix only to ASCIIUsernameValidator.",
+            "Apply the fix to both username validators."
+          ],
+          "resolved_by": [
+            "unicode_reject_newline"
+          ]
+        }
+      ],
+      "vendor_hashes": {
+        "vendor/username/django/contrib/auth/validators.py": "920450b414c594747e36857e4b69011d662cc2b6867c9b8a86bab670261d473e"
+      },
+      "upstream_source_url": "https://github.com/django/django/blob/d26b2424437dabeeca94d7900b37d2df4410da0c/django/contrib/auth/validators.py",
+      "probe_scope": "Extracted regex and flags, evaluated with re.search on plain strings. Not full Django validation or original test execution.",
+      "review_status": "assistant-authored development contract; independent and full-environment review pending",
+      "limitations": [
+        "FAIL_TO_PASS also lists an unrelated help-text test; all original IDs are retained, full harness must resolve this before benchmark release.",
+        "Both development originals are Django tasks; no cross-repository generalization claim."
+      ],
+      "plans": {
+        "addition": {
+          "initial_requirement_ids": [
+            "ascii_reject_newline",
+            "preserve_character_rules"
+          ],
+          "unresolved_dimensions": [],
+          "add_requirement_ids": [
+            "unicode_reject_newline"
+          ],
+          "remove_requirement_ids": [],
+          "contrast_case": {
+            "input": "{\"validator\": \"UnicodeUsernameValidator\", \"value\": \"trailingnewline\\n\"}",
+            "earlier_output": "accepted",
+            "final_output": "rejected",
+            "earlier_basis": "An ASCII-only fix satisfies the initial definite requirements while leaving the Unicode validator unchanged."
+          }
+        },
+        "clarification": {
+          "initial_requirement_ids": [
+            "ascii_reject_newline",
+            "preserve_character_rules"
+          ],
+          "unresolved_dimensions": [
+            "validator_scope"
+          ],
+          "add_requirement_ids": [
+            "unicode_reject_newline"
+          ],
+          "remove_requirement_ids": [],
+          "contrast_case": {
+            "input": "{\"validator\": \"UnicodeUsernameValidator\", \"value\": \"trailingnewline\\n\"}",
+            "earlier_output": "accepted",
+            "final_output": "rejected",
+            "earlier_basis": "An ASCII-only fix satisfies the initial definite requirements while leaving the Unicode validator unchanged."
+          }
+        }
+      }
+    }
+  ]
+}

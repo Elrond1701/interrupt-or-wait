@@ -1,0 +1,74 @@
+{
+  "source_total": 300,
+  "attempted": 300,
+  "selected": 152,
+  "attempted_not_selected": 148,
+  "untried": 0,
+  "message_counts": {
+    "2": 59,
+    "3": 93
+  },
+  "categories": {
+    "cumulative": 12,
+    "clarification": 36,
+    "revision": 18,
+    "mixed": 86
+  },
+  "category_by_messages": {
+    "cumulative": {
+      "2": 10,
+      "3": 2
+    },
+    "clarification": {
+      "2": 31,
+      "3": 5
+    },
+    "revision": {
+      "2": 18
+    },
+    "mixed": {
+      "3": 86
+    }
+  },
+  "repositories": {
+    "astropy/astropy": 5,
+    "django/django": 68,
+    "matplotlib/matplotlib": 8,
+    "mwaskom/seaborn": 3,
+    "pydata/xarray": 1,
+    "pylint-dev/pylint": 3,
+    "pytest-dev/pytest": 5,
+    "scikit-learn/scikit-learn": 7,
+    "sphinx-doc/sphinx": 8,
+    "sympy/sympy": 44
+  },
+  "total_messages": 397,
+  "environment_validated": 3,
+  "new_solver_runs": 0,
+  "source_repository_counts": {
+    "astropy/astropy": 6,
+    "django/django": 114,
+    "matplotlib/matplotlib": 23,
+    "mwaskom/seaborn": 4,
+    "pallets/flask": 3,
+    "psf/requests": 6,
+    "pydata/xarray": 5,
+    "pylint-dev/pylint": 6,
+    "pytest-dev/pytest": 17,
+    "scikit-learn/scikit-learn": 23,
+    "sphinx-doc/sphinx": 16,
+    "sympy/sympy": 77
+  },
+  "message_percentages": {
+    "2": 38.82,
+    "3": 61.18
+  },
+  "category_percentages": {
+    "cumulative": 7.89,
+    "clarification": 23.68,
+    "revision": 11.84,
+    "mixed": 56.58
+  },
+  "first_pass_complete": true,
+  "mean_messages": 2.612
+}

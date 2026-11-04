@@ -1,0 +1,37 @@
+Interpret the following probe rules with this distinction:
+
+1. The FINAL destination is already reviewed and is the same task in all four
+   modes. Read the WHOLE issue, including examples and expected output, when
+   assessing support. A source_quote is only an excerpt, not the only evidence.
+   A bug report can imply fixing the reported behavior without the literal word
+   "must". Do not reject a documented example's fields or conditions merely
+   because they are not repeated in its short quote. Suggested tests/implementation
+   steps are not extra behavioral features for purposes of this probe.
+2. EARLIER temporary policies and uncertainties are deliberately SYNTHETIC.
+   They DO NOT need to be in the historical issue. Users may first want a
+   different validation, presentation, compatibility, or input-scope policy,
+   then change their mind. They may initially withhold decisions that are known
+   in the complete original issue. "No such history in the source" is NEVER
+   sufficient reason to refuse. Supply credible motivations, not fake facts
+   about tests or undocumented code behavior. The final task must stay fixed.
+3. Still reject unnatural artificial changes. A policy "out of scope for now"
+   does NOT prohibit a feature: adding it later is addition, not revision.
+   Revision requires an explicitly incompatible earlier behavioral request.
+   Keep the message and active-unit annotation in agreement. Temporary behavior
+   cannot be merely "preserve the bug" or mathematically incorrect computation.
+4. For clarification, identify what uncertainty is actually removed. Do not
+   count "fix the error -> avoid that same error" or "preserve output -> keep
+   its existing newline" as an information gain. A broad unconditional demand
+   cannot be labeled a weaker partial goal than a narrow conditional endpoint.
+   Express genuinely partial intent or actual open decisions instead.
+5. THREE is preferred, not mandatory. If three do not fit, genuinely consider
+   a TWO-message conversation of the same category before refusing. A mixed
+   conversation alone needs three because it has two different update types.
+   Single-goal tasks can still support clarification or synthetic revision.
+   Cumulative needs independent additive final scopes and cannot manufacture
+   them. Generic preservation of existing behavior is already invariant.
+
+These are general interpretation clarifications, not per-task scope hints.
+Return a concrete dialogue when possible, with meaningful intermediate tasks.
+The following shared probe rules and requested-mode instructions still apply.
+

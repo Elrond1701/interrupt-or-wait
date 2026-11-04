@@ -1,0 +1,12 @@
+{
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["decision", "reason", "initial_message_en", "update_transition_en", "risks"],
+  "properties": {
+    "decision": {"type": "string", "enum": ["propose_split", "defer"]},
+    "reason": {"type": "string", "minLength": 1, "maxLength": 600},
+    "initial_message_en": {"type": "string", "maxLength": 1800},
+    "update_transition_en": {"type": "string", "maxLength": 1000},
+    "risks": {"type": "array", "maxItems": 4, "items": {"type": "string"}}
+  }
+}

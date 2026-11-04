@@ -1,0 +1,15 @@
+{
+  "version": "balance_v3",
+  "minimum_category_percent": 10,
+  "target_percent": {
+    "cumulative": 30,
+    "clarification": 30,
+    "revision": 25,
+    "mixed": 15
+  },
+  "max_classes_per_original": 1,
+  "counting_unit": "selected_reviewed_original_task",
+  "scope": "Development construction targets, not observed user frequencies or benchmark-ready counts.",
+  "quality_rule": "A quota changes attempt priority, never semantic acceptance. Preserve refusals and unmet targets.",
+  "length_rule": "For version-2 source contracts, prefer natural three-message plans and retain two-message fallbacks. Class targets rank choices rather than excluding full classes; no hard length quota."
+}

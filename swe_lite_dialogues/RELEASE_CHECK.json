@@ -1,0 +1,59 @@
+{
+  "release": "team_v1",
+  "validation_date": "2026-11-03",
+  "scope": "Offline portability, program regression and Git staging checks only. No official repository tests or agent experiments.",
+  "python_version": "Python 3.12.14",
+  "fresh_environment_without_third_party_packages": true,
+  "path_contains_spaces": true,
+  "offline_verifier": {
+    "passed": true,
+    "original_snapshot_tasks": 300,
+    "selected_conversations": 152,
+    "message_counts": {
+      "2": 59,
+      "3": 93
+    },
+    "categories": {
+      "clarification": 36,
+      "mixed": 86,
+      "revision": 18,
+      "cumulative": 12
+    },
+    "scripted_delivery_conditions": [
+      "wait",
+      "full",
+      "interrupt"
+    ],
+    "scoring_inputs_prepared": 152,
+    "model_calls": 0,
+    "docker_runs": 0,
+    "scope": "Offline package and interface checks, not semantic certification or model evaluation",
+    "shipped_files_checked_at_test": 115
+  },
+  "program_tests": {
+    "run": 47,
+    "passed": 47
+  },
+  "demo_conditions": [
+    "wait",
+    "full",
+    "interrupt"
+  ],
+  "generation_preview_calls": 0,
+  "documented_scoring_prepare_and_summary": true,
+  "git_staging": {
+    "only_shipped_files_staged": true,
+    "ignored_local_artifact_examples": 8,
+    "temporary_repository_removed": true
+  },
+  "model_calls": 0,
+  "docker_runs": 0,
+  "uploaded": false,
+  "production_pipeline_changed": false,
+  "packaging_note": "The portability copy was checked before this summary file was added. Final static hashes are in CHECKSUMS.json.",
+  "privacy_check": {
+    "constructor_home_or_account_markers_found": 0,
+    "common_credential_patterns_found": 0,
+    "scope": "All shipped text and the decompressed source snapshot; original upstream issue content remains unchanged."
+  }
+}
